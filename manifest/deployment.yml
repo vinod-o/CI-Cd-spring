@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-project
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: spring-app
+  template:
+    metadata:
+      name: spring-boot-project
+      labels:
+        app: spring-app
+    spec:
+      containers:
+        - name: sprind-boot containers
+          image: vinodo3735/newbuild:v1
+          ports:
+            - containerport: 8080
